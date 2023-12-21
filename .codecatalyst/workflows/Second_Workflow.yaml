@@ -1,0 +1,15 @@
+Name: Second_Workflow
+SchemaVersion: 1.0
+Triggers:
+  - Type: Push
+    Branches:
+      - new_branch
+Actions:
+  Build:
+    Identifier: aws/build@v1
+    Inputs:
+      Sources:
+        - WorkflowSource
+    Configuration:
+      Steps:
+        - Run: echo "hello world"
